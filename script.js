@@ -63,3 +63,16 @@ function deleteSpot(spotId) {
         alert("Bitte einloggen!");
     }
 }
+
+import { db, storage, auth } from "./firebase.js";
+
+// Beispiel: Daten in Firestore speichern
+db.collection("waste_spots").add({
+    lat: 51.1657,
+    lng: 10.4515,
+    wasteType: "Plastikflasche",
+    wasteCondition: "Leicht verwittert",
+    reportDate: new Date().toISOString().split("T")[0]
+}).then(() => {
+    console.log("Müll-Hotspot gespeichert!");
+});
