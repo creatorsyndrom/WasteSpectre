@@ -6,7 +6,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth
 
 // Deine Firebase-Konfiguration
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
+    apiKey: "AIzaSyCs5IVnEwEQBxKtayI1XbzAh2e7zNeSxvg",
     authDomain: "wastespectre.firebaseapp.com",
     projectId: "wastespectre",
     storageBucket: "wastespectre.firebaseapp.com",
