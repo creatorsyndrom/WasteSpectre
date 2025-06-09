@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Spectre – Müllkarte</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+    <h1>Waste Spectre – Müllkarte</h1>
+
+    <div id="loginSection">
+        <input type="email" id="email" placeholder="E-Mail">
+        <input type="text" id="nickname" placeholder="Nickname">
+        <input type="password" id="password" placeholder="Passwort (min. 8 Zeichen)">
+        <button id="register">Registrieren</button>
+        <button id="login">Einloggen</button>
+    </div>
+
+    <div id="map"></div>
+
+    <form id="reportForm">
+        <input type="file" id="imageUpload" accept="image/*" required>
+        <input type="text" id="wasteType" placeholder="Art des Mülls" required>
+        <input type="text" id="wasteCondition" placeholder="Zustand des Mülls" required>
+        <button type="submit">Müll-Hotspot melden</button>
+    </form>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
