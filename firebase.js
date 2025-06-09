@@ -1,48 +1,25 @@
-// Firebase-Konfiguration
+// Importiere die benötigten Firebase-Dienste
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-storage.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+
+// Deine Firebase-Konfiguration
 const firebaseConfig = {
-    apiKey: "DEINE_API_KEY",
-    authDomain: "DEINE_AUTH_DOMAIN",
-    projectId: "DEIN_PROJECT_ID",
-    storageBucket: "DEIN_STORAGE_BUCKET",
-    messagingSenderId: "DEINE_SENDER_ID",
-    appId: "DEINE_APP_ID"
+    apiKey: "AIzaSyCs5IVnEwEQBxKtayI1XbzAh2e7zNeSxvg",
+    authDomain: "wastespectre.firebaseapp.com",
+    projectId: "wastespectre",
+    storageBucket: "wastespectre.firebaseapp.com",
+    messagingSenderId: "426840132509",
+    appId: "1:426840132509:web:0186d08af8b57ce34e7d74",
+    measurementId: "G-890C4DRXG6"
 };
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const storage = firebase.storage();
+// Firebase initialisieren
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+const auth = getAuth(app);
 
-// Registrierung & Login
-document.getElementById("register").addEventListener("click", function() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let nickname = document.getElementById("nickname").value;
-
-    if (password.length < 8) {
-        alert("Passwort muss mindestens 8 Zeichen haben!");
-        return;
-    }
-
-    auth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
-        let user = userCredential.user;
-        db.collection("users").doc(user.uid).set({
-            email: email,
-            nickname: nickname
-        });
-        alert("Registrierung erfolgreich!");
-    }).catch((error) => {
-        alert(error.message);
-    });
-});
-
-document.getElementById("login").addEventListener("click", function() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    auth.signInWithEmailAndPassword(email, password).then(() => {
-        alert("Login erfolgreich!");
-    }).catch((error) => {
-        alert(error.message);
-    });
-});
+// Exporte für die Nutzung in anderen Dateien
+export { db, storage, auth };
