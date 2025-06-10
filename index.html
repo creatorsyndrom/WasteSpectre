@@ -4,10 +4,20 @@
     <title>WasteSpectre</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
-        #map {
-            height: 500px; /* Höhe der Karte */
-        }
-    </style>
+    #map {
+        height: 500px; /* Höhe der Karte */
+    }
+
+    /* Neue Regeln für Popups */
+    .leaflet-popup-content {
+        font-size: 16px; /* Beispiel: 16 Pixel Schriftgröße */
+        line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+    }
+    .leaflet-popup-content b {
+        font-size: 18px; /* Für fetten Text im Popup, z.B. Überschriften */
+    }
+</style>
+
 </head>
 <body>
     <div id="map"></div>
