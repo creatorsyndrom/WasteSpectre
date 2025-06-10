@@ -4,19 +4,32 @@
     <title>WasteSpectre</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
-    #map {
-        height: 500px; /* Höhe der Karte */
+    /* Grundlegende Einstellungen für den gesamten Bildschirm */
+    html, body {
+        height: 100%; /* Sichert, dass html und body die volle Höhe einnehmen */
+        margin: 0; /* Entfernt den Standard-Rand des Browsers */
+        padding: 0; /* Entfernt das Standard-Padding des Browsers */
+        overflow: hidden; /* Verhindert Scrollbalken, wenn die Karte den ganzen Bildschirm einnimmt */
     }
 
-    /* Neue Regeln für Popups */
+    #map {
+        height: 100vh; /* 'viewport height': Die Karte nimmt 100% der sichtbaren Browserhöhe ein */
+        width: 100vw;  /* 'viewport width': Die Karte nimmt 100% der sichtbaren Browserbreite ein */
+        /* Optional: Wenn du das Gefühl hast, die Karte ist nicht ganz randlos,
+           kannst du auch 'position: absolute; top: 0; left: 0;' hinzufügen,
+           ist aber oft nicht nötig mit den obigen Einstellungen. */
+    }
+
+    /* Regeln für Popups (wie oben beschrieben, nach dem Testen ggf. !important entfernen) */
     .leaflet-popup-content {
-        font-size: 16px; /* Beispiel: 16 Pixel Schriftgröße */
-        line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+        font-size: 20px !important;
+        line-height: 1.6 !important;
     }
     .leaflet-popup-content b {
-        font-size: 18px; /* Für fetten Text im Popup, z.B. Überschriften */
+        font-size: 22px !important;
     }
 </style>
+
 
 </head>
 <body>
