@@ -29,42 +29,43 @@
         font-size: 22px !important;
     }
 
-    /* Neue Regeln für schwebende Buttons */
+    /* Aktualisierte Regeln für schwebende Buttons */
     .floating-button {
-        position: absolute; /* Ermöglicht das freie Positionieren */
-        padding: 10px 15px; /* Innenabstand des Buttons */
-        background-color: #007bff; /* Hintergrundfarbe (Blau, wie oft bei Links) */
-        color: white; /* Schriftfarbe */
-        border: none; /* Kein Rand */
-        border-radius: 5px; /* Abgerundete Ecken */
-        cursor: pointer; /* Mauszeiger wird zu Hand beim Überfahren */
-        font-size: 16px; /* Schriftgröße des Buttons */
-        z-index: 1000; /* Sorgt dafür, dass der Button über der Karte liegt */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Kleiner Schatten für Tiefe */
+        position: absolute;
+        padding: 12px 18px; /* Etwas größerer Innenabstand */
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px; /* Größere Schriftgröße */
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        /* Optional: Für ein besseres Aussehen des Icons */
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Abstand zwischen Icon und Text */
     }
 
     .top-right {
-        top: 20px; /* Abstand vom oberen Rand */
-        right: 20px; /* Abstand vom rechten Rand */
+        top: 20px;
+        right: 20px;
     }
 
-    /* Optional: Hover-Effekt für den Button */
     .floating-button:hover {
-        background-color: #0056b3; /* Dunkleres Blau beim Überfahren */
+        background-color: #0056b3;
     }
 
-    /* Media Query für kleinere Bildschirme (Smartphones) - optional anpassen */
+    /* Media Query für kleinere Bildschirme (Smartphones) - Werte anpassen */
     @media (max-width: 768px) {
         .top-right {
-            top: 10px; /* Etwas weniger Abstand oben auf kleinen Bildschirmen */
-            right: 10px; /* Etwas weniger Abstand rechts auf kleinen Bildschirmen */
-            padding: 8px 12px; /* Etwas kleinere Polsterung */
-            font-size: 14px; /* Etwas kleinere Schrift */
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px; /* Auch hier den Innenabstand für kleine Bildschirme anpassen */
+            font-size: 16px; /* Schriftgröße für kleine Bildschirme anpassen */
         }
-    }   
-
+    }
 </style>
-
 
 </head>
 <body>
