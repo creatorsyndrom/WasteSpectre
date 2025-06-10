@@ -28,13 +28,51 @@
     .leaflet-popup-content b {
         font-size: 22px !important;
     }
+
+    /* Neue Regeln für schwebende Buttons */
+    .floating-button {
+        position: absolute; /* Ermöglicht das freie Positionieren */
+        padding: 10px 15px; /* Innenabstand des Buttons */
+        background-color: #007bff; /* Hintergrundfarbe (Blau, wie oft bei Links) */
+        color: white; /* Schriftfarbe */
+        border: none; /* Kein Rand */
+        border-radius: 5px; /* Abgerundete Ecken */
+        cursor: pointer; /* Mauszeiger wird zu Hand beim Überfahren */
+        font-size: 16px; /* Schriftgröße des Buttons */
+        z-index: 1000; /* Sorgt dafür, dass der Button über der Karte liegt */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Kleiner Schatten für Tiefe */
+    }
+
+    .top-right {
+        top: 20px; /* Abstand vom oberen Rand */
+        right: 20px; /* Abstand vom rechten Rand */
+    }
+
+    /* Optional: Hover-Effekt für den Button */
+    .floating-button:hover {
+        background-color: #0056b3; /* Dunkleres Blau beim Überfahren */
+    }
+
+    /* Media Query für kleinere Bildschirme (Smartphones) - optional anpassen */
+    @media (max-width: 768px) {
+        .top-right {
+            top: 10px; /* Etwas weniger Abstand oben auf kleinen Bildschirmen */
+            right: 10px; /* Etwas weniger Abstand rechts auf kleinen Bildschirmen */
+            padding: 8px 12px; /* Etwas kleinere Polsterung */
+            font-size: 14px; /* Etwas kleinere Schrift */
+        }
+    }   
+
 </style>
 
 
 </head>
 <body>
+
     <div id="map"></div>
 
+    <button id="profileButton" class="floating-button top-right">Profil</button>
+    
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Karte initialisieren
